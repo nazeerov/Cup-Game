@@ -92,16 +92,17 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             val timer = object : CountDownTimer(1000, 1000) {
 
-                @SuppressLint("SetTextI18n")
+                @SuppressLint("SetTextI18n", "ResourceAsColor")
                 override fun onTick(millisUntilFinished: Long) {
                     binding.laDownCup1.visibility = View.INVISIBLE
                     binding.laDownCup2.visibility = View.INVISIBLE
                     binding.laDownCup3.visibility = View.INVISIBLE
                     if (result) {
-                        tvResult.text = "Win"
+                        tvResult.text = "W i n"
+                        tvResult.setBackgroundColor(R.color.main_color2)
                         tvTrue.text = "True : ${++numberOfTrue}"
                     } else {
-                        tvResult.text = "Loose"
+                        tvResult.text = "L o o s e"
                         tvFalse.text = "False : ${++numberOfFalse}"
                     }
                     tvResult.visibility = View.VISIBLE
